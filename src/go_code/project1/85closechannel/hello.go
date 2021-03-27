@@ -45,7 +45,7 @@ func readData(intChan <-chan int, exitChan chan<- bool) {
 		fmt.Println("channel读出：", v)
 	}
 	// for{
-	// 	v,ok <- intChan
+	// 	v,ok :=<- intChan
 	// 	if !ok{
 	// 		break
 	// 	}
@@ -53,7 +53,7 @@ func readData(intChan <-chan int, exitChan chan<- bool) {
 	// }
 	exitChan <- true
 	close(exitChan) //传递结束信号
-}
+}s
 
 // 管道的关闭
 // 管道的关闭是一个很重要的知识点，在阻塞中经常用到
