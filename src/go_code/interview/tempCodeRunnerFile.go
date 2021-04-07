@@ -1,2 +1,1 @@
-
-type ListNode struct {
+aftb

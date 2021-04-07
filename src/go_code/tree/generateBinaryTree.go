@@ -1,16 +1,11 @@
-package main
+package tree
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
-func main() {
-	// Inorder(nil)
-	tn := generateBinaryTree(1, nil, 3, nil, nil, 4, 5, 6, 7)
-	str, _ := json.Marshal(tn)
-	fmt.Println(string(str))
-}
+// func main() {
+// 	// Inorder(nil)
+// 	tn := generateBinaryTree(1, nil, 3, nil, nil, 4, 5, 6, 7)
+// 	str, _ := json.Marshal(tn)
+// 	fmt.Println(string(str))
+// }
 
 type TreeNode struct {
 	Val   int
@@ -18,19 +13,8 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func Inorder(tn *TreeNode) {
-	generateBinaryTree(1, 2, 3, 4, nil)
-	if tn == nil {
-		return
-	}
-	Inorder(tn.Left)
-	fmt.Println(tn.Val)
-	Inorder(tn.Right)
-
-}
-
-//构建二叉树通用方法 1 nil 3 4 5 6 7
-func generateBinaryTree(data ...interface{}) (TN *TreeNode) {
+//构建二叉树方法 1 nil 3 4 5 6 7
+func GenerateBinaryTree(data ...interface{}) (TN *TreeNode) {
 	var len = len(data)
 	TN = createNode(0, data, len)
 	return
